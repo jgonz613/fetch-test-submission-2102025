@@ -8,6 +8,7 @@ First, run the development server:
 npm dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
 ## Pages
@@ -47,61 +48,48 @@ npm dev
   - This makes it so that the data is not always requested. We only request the dogs that are not present in the current set. Maybe for edge cases where data changes, we can have a timestamp to check duration of each dog data to refresh, but given this exercise i assumed dog data will last the 1 hr and will not change.
  
 
+# Takehome Test TODO:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+X Landing Screen
+- X Redirect to login if not authenticated
+- X redirect to search if authenticated
 
-## Deploy on Vercel
+X Login Screen
+- X Name
+- X Email
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-Takehome Test:
-
-Landing Screen
-
-- Redirect to login if not authenticated
-- redirect to search if authenticated
-
-Login Screen
-
-- Name
-- Email
-
-Search (Logged in Screen)
-
-- Logout Button
-  - POST /auth/logout
-  - sent back to login screen
-- Search
-  - By Breed
+X Search (Logged in Screen)
+- XLogout Button
+  - XPOST /auth/logout
+  - Xsent back to login screen
+- X Search
+  - XBy Breed
     - autocomplete on breeds??
-  - API: /dogs/breeds
+  - X API: /dogs/breeds
     - breeds - an array of breeds
       zipCodes - an array of zip codes
       ageMin - a minimum age
       ageMax - a maximum age
-  - Update Paging count
+  - X Update Paging count
     - Paging on searches limit to 10/25
-  - Order results by ascending/descenting
-  - By Location
+  - X Order results by ascending/descenting
+  - By Location - nice to have
 
-Match Screen
-
+X Match Screen
 - get api of dogs that match breed
 
-Favorite Screen
-
+X Favorite Screen
 - list of favorites
   - can untoggle listing
 - go back to search
 - go to matching
 
+Other Todo:
 
-Todo:
-Zip code Search?
-Header/Footer Styling
-  - move logout to header/ footer
+XHeader/Footer Styling
+  - X move logout to header/ footer
+X Responsive Styling 
+X clean up code
 
-Responsive Styling 
-clean up code
+Todo Post MVP:
+- Zip code Search?
