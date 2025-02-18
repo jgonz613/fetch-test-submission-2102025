@@ -10,7 +10,7 @@ const Search = () => {
   
   return (
     <div>
-      <h1 className="font-extrabold">Search Dogs Page</h1>
+      <h1 className="text-2xl font-bold mb-6">Search Dogs</h1>
       <SearchBar />
       <div>
         {dogDetailResults && <DogListing dogs={dogDetailResults}/>}

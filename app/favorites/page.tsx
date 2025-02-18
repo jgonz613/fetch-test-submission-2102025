@@ -24,7 +24,7 @@ const Match = () => {
 
   
       <Link href="/search" className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded"> Back to Search</Link>
-      <h1 className="font-extrabold">Favorites</h1>
+      <h1 className="text-2xl font-bold mb-6">Favorites</h1>
 
       <div>
         {favoriteDogs && <DogListing dogs={favoriteDogs}/>}

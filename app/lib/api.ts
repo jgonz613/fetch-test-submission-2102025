@@ -84,10 +84,15 @@ export const fetchDogs = async (
   page: number,
   sortBy: "name" | "breed" | "age" = "breed",
   sortOrder: "asc" | "desc" = "asc",
+  ageMin: number,
+  ageMax: number,
   selectedBreeds: string[] = []
 ) => {
   const breedParams = selectedBreeds.length ? selectedBreeds.map(breed => `breeds[]=${encodeURIComponent(breed)}`).join("&") : '';
-  const url = `https://frontend-take-home-service.fetch.com/dogs/search?size=${numPage}&from=${(page - 1) * numPage}&${breedParams}&sort=${sortBy}:${sortOrder}`;
+  const ageMinParams = ageMin >= 0 ? `&ageMin=${ageMin}` : '';
+  const ageMaxParams = ageMax >= 0 ? `&ageMax=${ageMax}` : '';
+
+  const url = `https://frontend-take-home-service.fetch.com/dogs/search?size=${numPage}&from=${(page - 1) * numPage}&${breedParams}${ageMinParams}${ageMaxParams}&sort=${sortBy}:${sortOrder}`;
 
   console.log("fetchDogs", url);
   return (await fetchWithAuth(url)) || [];

@@ -29,10 +29,14 @@ interface Store {
   page: number;
   numPage: number;
   setPage: (page: number) => void;
-  
   setNext: (next: string) => void;
   setPrev: (prev: string) => void;
   setTotal: (total: number) => void;
+
+  ageMin: number;
+  setAgeMin: (age: number) => void;
+  ageMax: number;
+  setAgeMax: (age: number) => void;
 
   setAuth: (user: User) => void;
   logout: () => void;
@@ -86,6 +90,15 @@ export const useStore = create<Store>()(
       setPage: (page) => {
         set({ page: page });
       },
+      ageMin: 0,
+      setAgeMin: (age) => {
+        set({ ageMin: age });
+      },
+      ageMax: 99,
+      setAgeMax:  (age) => {
+        set({ ageMax: age });
+      },
+
       searchResults: [],
       setSearchResults: async (results) => {
         // get missing dog details on diginds
